@@ -1,0 +1,21 @@
+<h2>Sign In</h2>
+
+<%= form_for :session do |f| %>
+  <p>
+  <%= f.label :username %>
+  <%= f.text_field :username %>
+  </p>
+
+  <p>
+  <%= f.label :password %>
+  <%= f.text_field :password %>
+  </p>
+
+  <p><%= f.submit "Login" %></p>
+<% end %>
+
+<button><%= link_to "Sign Up", new_user_path %></button>
+
+<% if flash[:incorrect] %>
+<div><%= flash[:incorrect] %></div>
+<% end %>
